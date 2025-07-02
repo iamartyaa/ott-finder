@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         }
 
         const rawSources = await sourcesRes.json();
-        const filtered = rawSources.filter((s) => (s.type === "sub") && s.region === 'IN');
+        const filtered = rawSources.filter((s) => (s.type === "sub" || s.type === "rent") && (s.region === 'IN' || (s.source_id === 372 && s.region === 'US')));
 
         // Add logo + friendly name
         const sources = filtered.map((s) => ({
