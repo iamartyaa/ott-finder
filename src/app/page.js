@@ -86,7 +86,7 @@ export default function Home() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search movies or shows"
-              className="flex-1 bg-transparent text-base focus:outline-none"
+              className="flex-1 bg-transparent text-base text-black focus:outline-none"
               autoFocus
             />
             <button
@@ -124,9 +124,11 @@ export default function Home() {
                 />
               )}
 
-              <h2 className="text-xl font-semibold">{item.name}</h2>
+              <h2 className="text-xl font-semibold text-black">{item.name}</h2>
 
-              <p className="text-neutral-800">{item.year} • {item.type}</p>
+
+              <p className="text-black">{item.year} • {item.type}</p>
+
               <button
                 className={`mt-4 px-4 py-2 text-sm sm:text-base rounded text-white transition ${loadingPlatforms[item.id]
                   ? 'bg-gray-400 cursor-not-allowed'
@@ -162,7 +164,8 @@ export default function Home() {
                         />
                       )}
                       <div className="flex flex-col text-sm text-left">
-                        <span className="font-medium">{src.displayName}</span>
+                        <span className="font-medium text-black">{src.displayName}</span>
+
 
                         <div className="flex gap-2 mt-1">
                           <span className={`text-xs px-2 py-0.5 rounded ${src.accessType === 'sub'
@@ -192,7 +195,7 @@ export default function Home() {
                 </div>
               )}
               {platforms[item.id] && platforms[item.id].length === 0 && (
-                <p className="text-sm text-gray-500 mt-2">Not available on OTT platforms in India.</p>
+                <p className="text-center text-black mt-6">Not available on OTT platforms in India.</p>
               )}
 
 
